@@ -1,21 +1,29 @@
-pipeline
-{
-agentanystages
-{
-stage('Check Validate'){steps{
-echo'ValidatingtheProgram'
-}
-}
-stage('Compilation'){steps{
-echo'CompilingtheProgram'
-}
-}
-stage('Installation'){steps{
-echo'InstallingtheProgram'
-}
-}
-stage('Deploy'){steps{
-echo'DeployingtheProgram'
-}
-}
+pipeline {
+    agent any  // Use 'agent any' to specify where the pipeline will run
+
+    stages {
+        stage('Check Validate') {
+            steps {
+                echo 'Validating the Program'
+            }
+        }
+
+        stage('Compilation') {
+            steps {
+                echo 'Compiling the Program'
+            }
+        }
+
+        stage('Installation') {
+            steps {
+                echo 'Installing the Program'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the Program'
+            }
+        }
+    }
 }
